@@ -9,6 +9,8 @@ import SwiftUI
 
 struct GalleryView: View {
     @StateObject private var mainViewModel = GalleryViewModel()
+    @State private var searchText = ""
+    @State private var showingSheet = false
     
     var body: some View {
         TabView {
@@ -16,19 +18,18 @@ struct GalleryView: View {
                 ScrollView(.vertical, showsIndicators: true) {
                     LazyVStack {
                         ForEach(self.mainViewModel.photos, id: \.self.id) { photo in
-                            ZStack {
+                            NavigationLink(destination: DetailView(photo: photo)) {
                                 GeometryReader { geometry in
-                                    RemoteImage(url: GalleryViewModel.createPhotoUrl(url: photo.raw ?? Constants.unknowPictureUrl))
-                                        .scaledToFit()
-                                        .padding(32)
-                                    Spacer()
+                                    CardView(minY: geometry.frame(in: .global).minY, imageURL: GalleryViewModel.createPhotoUrl(url: photo.raw ?? ""), photo: photo)
                                 }
-                                .frame(width: 256, height: 256, alignment: .center)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 440)
                             }
                             .onAppear {
                                 self.mainViewModel.loadMorePhotosIfNeeded(currentPhoto: photo)
                             }
                         }
+                        
                         if (mainViewModel.isLoadingPage) {
                             HStack() {
                                 Spacer()
@@ -36,6 +37,7 @@ struct GalleryView: View {
                                 Spacer()
                             }
                         }
+                        
                     }
                 }.navigationTitle("Today")
             }

@@ -62,17 +62,55 @@ class UnsplashService {
     static func handleError(error: Error) {
         DispatchQueue.main.async {
             NotificationCenter.default.post(name: .showAnAlert,
-                                            object:
-                                                AlertData(title: Text("⚠️ Error occured"),
-                                                          message: Text("""
+                                            object: AlertData(title: Text("⚠️ Error occured"),
+                                                              message: Text("""
                                         \n📡 Network error!
                                         \n(♨️ possibly API limit reached)\n
                                         \n⏳ please try again in one hour
                                         """),
-                                                          dismissButton: .default(Text("OK")) {
+                                                              dismissButton: .default(Text("OK")) {
                 print("Alert dismissed")
             }))
         }
+    }
+    
+    static func getPhotoInfo(id: String, completion:@escaping (PhotoDetailed) -> ()) {
+        var urlComponents = URLComponents(string: "\(Constants.UnsplashAPI.scheme)://\(Constants.UnsplashAPI.host)\(Constants.UnsplashAPI.path)/" + id)
+        
+        urlComponents?.queryItems = [
+            URLQueryItem(name: "client_id", value: Constants.UnsplashAPI.apiKey),
+        ]
+        
+        let url = urlComponents?.url?.absoluteURL
+        guard url != nil else {
+            print ("URL → Invalid...")
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url!) { data, response, error in
+            do {
+                if let error = error {
+                    self.handleError(error: error)
+                    return
+                }
+                guard let httpResponse = response as? HTTPURLResponse,
+                      (200...299).contains(httpResponse.statusCode) else {
+                    self.handleError(error: NSError(domain: "", code: 500, userInfo: nil))
+                    return
+                }
+                guard data != nil else {
+                    self.handleError(error: NSError(domain: "", code: 500, userInfo: nil))
+                    return
+                }
+                let photo =  try JSONDecoder().decode(PhotoDetailed.self, from: data!)
+                DispatchQueue.main.async {
+                    completion(photo)
+                }
+            } catch let error {
+                self.handleError(error: NSError(domain: "", code: 500, userInfo: nil))
+                print (error)
+            }
+        }.resume()
     }
 }
 

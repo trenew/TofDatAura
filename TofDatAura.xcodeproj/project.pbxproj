@@ -25,6 +25,12 @@
 		CE507723289464F40073300A /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE507718289464F40073300A /* DateFormatter+Extension.swift */; };
 		CE507724289464F40073300A /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50771A289464F40073300A /* RemoteImage.swift */; };
 		CE507725289464F40073300A /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50771C289464F40073300A /* GalleryViewModel.swift */; };
+		CE507729289464F40073300A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE507727289464F40073300A /* CardView.swift */; };
+		CE50772A289464F40073300A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE507728289464F40073300A /* DetailView.swift */; };
+		CE50772C289464F40073300A /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50772B289464F40073300A /* CircleImage.swift */; };
+		CE50772E289464F40073300A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50772D289464F40073300A /* DetailViewModel.swift */; };
+		CE507730289464F40073300A /* PhotoDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50772F289464F40073300A /* PhotoDetailed.swift */; };
+		CE507732289464F40073300A /* URLtoUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE507731289464F40073300A /* URLtoUIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +72,12 @@
 		CE507718289464F40073300A /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		CE50771A289464F40073300A /* RemoteImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		CE50771C289464F40073300A /* GalleryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
+		CE507727289464F40073300A /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		CE507728289464F40073300A /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		CE50772B289464F40073300A /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		CE50772D289464F40073300A /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		CE50772F289464F40073300A /* PhotoDetailed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailed.swift; sourceTree = "<group>"; };
+		CE507731289464F40073300A /* URLtoUIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLtoUIImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +179,7 @@
 			children = (
 				CE50770F289464F40073300A /* User.swift */,
 				CE507710289464F40073300A /* Photo.swift */,
+				CE50772F289464F40073300A /* PhotoDetailed.swift */,
 				CE507711289464F40073300A /* AlertData.swift */,
 			);
 			path = Model;
@@ -176,6 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				CE507713289464F40073300A /* GalleryView.swift */,
+				CE507727289464F40073300A /* CardView.swift */,
+				CE507728289464F40073300A /* DetailView.swift */,
+				CE50772B289464F40073300A /* CircleImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,6 +218,7 @@
 		CE507719289464F40073300A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				CE507731289464F40073300A /* URLtoUIImage.swift */,
 				CE50771A289464F40073300A /* RemoteImage.swift */,
 			);
 			path = Helper;
@@ -211,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				CE50771C289464F40073300A /* GalleryViewModel.swift */,
+				CE50772D289464F40073300A /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -354,9 +372,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE50772E289464F40073300A /* DetailViewModel.swift in Sources */,
+				CE507729289464F40073300A /* CardView.swift in Sources */,
+				CE50772C289464F40073300A /* CircleImage.swift in Sources */,
+				CE507732289464F40073300A /* URLtoUIImage.swift in Sources */,
 				CE50771E289464F40073300A /* Photo.swift in Sources */,
 				CE507725289464F40073300A /* GalleryViewModel.swift in Sources */,
 				CE5076E6289464F40073300A /* PersistenceController.swift in Sources */,
+				CE507730289464F40073300A /* PhotoDetailed.swift in Sources */,
 				CE507723289464F40073300A /* DateFormatter+Extension.swift in Sources */,
 				CE50771D289464F40073300A /* User.swift in Sources */,
 				CE507722289464F40073300A /* Calendar+Extension.swift in Sources */,
@@ -366,6 +389,7 @@
 				CE5076E9289464F40073300A /* TofDatAura.xcdatamodeld in Sources */,
 				CE5076DD289464F40073300A /* TofDatAuraApp.swift in Sources */,
 				CE507720289464F40073300A /* GalleryView.swift in Sources */,
+				CE50772A289464F40073300A /* DetailView.swift in Sources */,
 				CE50770C289464F40073300A /* UnsplashService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
