@@ -6,15 +6,30 @@
 //
 
 import SwiftUI
+import CoreData
 
 @main
 struct TofDatAuraApp: App {
-    let persistenceController = PersistenceController.shared
+    @State private var showAnAlert = false
+    @State private var alertData = AlertData.empty
+
+    private var persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GalleryView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .onReceive(NotificationCenter.default.publisher(for: .showAnAlert)) { notification in
+                    if let data = notification.object as? AlertData {
+                        alertData = data
+                        showAnAlert = true
+                    }
+                }
+                .alert(isPresented: $showAnAlert) {
+                    Alert(title: alertData.title,
+                          message: alertData.message,
+                          dismissButton: alertData.dismissButton)
+                }
         }
     }
 }

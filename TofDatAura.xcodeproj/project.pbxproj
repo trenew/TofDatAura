@@ -8,14 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		CE5076DD289464F40073300A /* TofDatAuraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5076DC289464F40073300A /* TofDatAuraApp.swift */; };
-		CE5076DF289464F40073300A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5076DE289464F40073300A /* ContentView.swift */; };
 		CE5076E1289464F40073300A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5076E0289464F40073300A /* Assets.xcassets */; };
 		CE5076E4289464F40073300A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5076E3289464F40073300A /* Preview Assets.xcassets */; };
-		CE5076E6289464F40073300A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5076E5289464F40073300A /* Persistence.swift */; };
+		CE5076E6289464F40073300A /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5076E5289464F40073300A /* PersistenceController.swift */; };
 		CE5076E9289464F40073300A /* TofDatAura.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE5076E7289464F40073300A /* TofDatAura.xcdatamodeld */; };
 		CE5076F3289464F40073300A /* TofDatAuraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5076F2289464F40073300A /* TofDatAuraTests.swift */; };
 		CE5076FD289464F40073300A /* TofDatAuraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5076FC289464F40073300A /* TofDatAuraUITests.swift */; };
 		CE5076FF289464F40073300A /* TofDatAuraUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5076FE289464F40073300A /* TofDatAuraUITestsLaunchTests.swift */; };
+		CE50770C289464F40073300A /* UnsplashService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50770B289464F40073300A /* UnsplashService.swift */; };
+		CE50771D289464F40073300A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50770F289464F40073300A /* User.swift */; };
+		CE50771E289464F40073300A /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE507710289464F40073300A /* Photo.swift */; };
+		CE50771F289464F40073300A /* AlertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE507711289464F40073300A /* AlertData.swift */; };
+		CE507720289464F40073300A /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE507713289464F40073300A /* GalleryView.swift */; };
+		CE507721289464F40073300A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE507715289464F40073300A /* Constants.swift */; };
+		CE507722289464F40073300A /* Calendar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE507717289464F40073300A /* Calendar+Extension.swift */; };
+		CE507723289464F40073300A /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE507718289464F40073300A /* DateFormatter+Extension.swift */; };
+		CE507724289464F40073300A /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50771A289464F40073300A /* RemoteImage.swift */; };
+		CE507725289464F40073300A /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50771C289464F40073300A /* GalleryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,16 +47,25 @@
 /* Begin PBXFileReference section */
 		CE5076D9289464F40073300A /* TofDatAura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TofDatAura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5076DC289464F40073300A /* TofDatAuraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TofDatAuraApp.swift; sourceTree = "<group>"; };
-		CE5076DE289464F40073300A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE5076E0289464F40073300A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE5076E3289464F40073300A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CE5076E5289464F40073300A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		CE5076E5289464F40073300A /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		CE5076E8289464F40073300A /* TofDatAura.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TofDatAura.xcdatamodel; sourceTree = "<group>"; };
 		CE5076EE289464F40073300A /* TofDatAuraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TofDatAuraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5076F2289464F40073300A /* TofDatAuraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TofDatAuraTests.swift; sourceTree = "<group>"; };
 		CE5076F8289464F40073300A /* TofDatAuraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TofDatAuraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5076FC289464F40073300A /* TofDatAuraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TofDatAuraUITests.swift; sourceTree = "<group>"; };
 		CE5076FE289464F40073300A /* TofDatAuraUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TofDatAuraUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE50770B289464F40073300A /* UnsplashService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashService.swift; sourceTree = "<group>"; };
+		CE50770F289464F40073300A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE507710289464F40073300A /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		CE507711289464F40073300A /* AlertData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertData.swift; sourceTree = "<group>"; };
+		CE507713289464F40073300A /* GalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		CE507715289464F40073300A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CE507717289464F40073300A /* Calendar+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Calendar+Extension.swift"; sourceTree = "<group>"; };
+		CE507718289464F40073300A /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		CE50771A289464F40073300A /* RemoteImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		CE50771C289464F40073300A /* GalleryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +117,13 @@
 			isa = PBXGroup;
 			children = (
 				CE5076DC289464F40073300A /* TofDatAuraApp.swift */,
-				CE5076DE289464F40073300A /* ContentView.swift */,
+				CE50770D289464F40073300A /* Services */,
+				CE50770E289464F40073300A /* Model */,
+				CE507712289464F40073300A /* View */,
+				CE50771B289464F40073300A /* ViewModel */,
+				CE507726289464F40073300A /* CoreData */,
+				CE507714289464F40073300A /* Common */,
 				CE5076E0289464F40073300A /* Assets.xcassets */,
-				CE5076E5289464F40073300A /* Persistence.swift */,
-				CE5076E7289464F40073300A /* TofDatAura.xcdatamodeld */,
 				CE5076E2289464F40073300A /* Preview Content */,
 			);
 			path = TofDatAura;
@@ -131,6 +152,76 @@
 				CE5076FE289464F40073300A /* TofDatAuraUITestsLaunchTests.swift */,
 			);
 			path = TofDatAuraUITests;
+			sourceTree = "<group>";
+		};
+		CE50770D289464F40073300A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE50770B289464F40073300A /* UnsplashService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CE50770E289464F40073300A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE50770F289464F40073300A /* User.swift */,
+				CE507710289464F40073300A /* Photo.swift */,
+				CE507711289464F40073300A /* AlertData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE507712289464F40073300A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE507713289464F40073300A /* GalleryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE507714289464F40073300A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CE507715289464F40073300A /* Constants.swift */,
+				CE507716289464F40073300A /* Extensions */,
+				CE507719289464F40073300A /* Helper */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CE507716289464F40073300A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE507717289464F40073300A /* Calendar+Extension.swift */,
+				CE507718289464F40073300A /* DateFormatter+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE507719289464F40073300A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CE50771A289464F40073300A /* RemoteImage.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		CE50771B289464F40073300A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE50771C289464F40073300A /* GalleryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CE507726289464F40073300A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CE5076E5289464F40073300A /* PersistenceController.swift */,
+				CE5076E7289464F40073300A /* TofDatAura.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,10 +354,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE5076E6289464F40073300A /* Persistence.swift in Sources */,
-				CE5076DF289464F40073300A /* ContentView.swift in Sources */,
+				CE50771E289464F40073300A /* Photo.swift in Sources */,
+				CE507725289464F40073300A /* GalleryViewModel.swift in Sources */,
+				CE5076E6289464F40073300A /* PersistenceController.swift in Sources */,
+				CE507723289464F40073300A /* DateFormatter+Extension.swift in Sources */,
+				CE50771D289464F40073300A /* User.swift in Sources */,
+				CE507722289464F40073300A /* Calendar+Extension.swift in Sources */,
+				CE507724289464F40073300A /* RemoteImage.swift in Sources */,
+				CE50771F289464F40073300A /* AlertData.swift in Sources */,
+				CE507721289464F40073300A /* Constants.swift in Sources */,
 				CE5076E9289464F40073300A /* TofDatAura.xcdatamodeld in Sources */,
 				CE5076DD289464F40073300A /* TofDatAuraApp.swift in Sources */,
+				CE507720289464F40073300A /* GalleryView.swift in Sources */,
+				CE50770C289464F40073300A /* UnsplashService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +453,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -407,7 +507,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
