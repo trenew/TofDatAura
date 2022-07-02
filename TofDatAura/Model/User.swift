@@ -13,7 +13,7 @@ struct User: Codable, Identifiable {
     let name: String?
     let location: String?
     let large: String?
-    
+
     init (from username: String) {
         id = nil
         name = nil
@@ -21,7 +21,7 @@ struct User: Codable, Identifiable {
         location = nil
         large = nil
     }
-    
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decode(String.self, forKey: .id)
@@ -35,11 +35,7 @@ struct User: Codable, Identifiable {
             location = nil
         }
     }
-    
-    func encode(to encoder: Encoder) throws {
-        
-    }
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case username
@@ -47,8 +43,12 @@ struct User: Codable, Identifiable {
         case location
         case profile_image
     }
-    
+
     enum UrlsKeys: String, CodingKey {
         case large
+    }
+
+    func encode(to encoder: Encoder) throws {
+
     }
 }

@@ -13,12 +13,12 @@ extension Calendar {
         formatter.dateFormat = "MMMM dd, yyyy - HH:mm"
         return formatter.string(from: date)
     }
-    
+
     public static func formattedDate(_ dateString: String) -> String {
         let formattedtString =  ISO8601DateFormatter().date(from: dateString).map { date in
             let formatter = DateFormatter()
             formatter.dateFormat = "MMMM dd, yyyy - HH:mm"
-            
+
             return formatter.string(from: date)
         } ?? ""
         return formattedtString

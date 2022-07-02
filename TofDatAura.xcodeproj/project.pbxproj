@@ -31,6 +31,11 @@
 		CE50772E289464F40073300A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50772D289464F40073300A /* DetailViewModel.swift */; };
 		CE507730289464F40073300A /* PhotoDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50772F289464F40073300A /* PhotoDetailed.swift */; };
 		CE507732289464F40073300A /* URLtoUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE507731289464F40073300A /* URLtoUIImage.swift */; };
+		CE507735289464F40073300A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE507733289464F40073300A /* MapView.swift */; };
+		CE507736289464F40073300A /* LikedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE507734289464F40073300A /* LikedView.swift */; };
+		CE507739289464F40073300A /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE507738289464F40073300A /* SearchResults.swift */; };
+		CE50773B289464F40073300A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50773A289464F40073300A /* Location.swift */; };
+		CE50773E289464F40073300A /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50773D289464F40073300A /* Shake.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +83,11 @@
 		CE50772D289464F40073300A /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		CE50772F289464F40073300A /* PhotoDetailed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailed.swift; sourceTree = "<group>"; };
 		CE507731289464F40073300A /* URLtoUIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLtoUIImage.swift; sourceTree = "<group>"; };
+		CE507733289464F40073300A /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		CE507734289464F40073300A /* LikedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikedView.swift; sourceTree = "<group>"; };
+		CE507738289464F40073300A /* SearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
+		CE50773A289464F40073300A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		CE50773D289464F40073300A /* Shake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,9 +187,11 @@
 		CE50770E289464F40073300A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CE50770F289464F40073300A /* User.swift */,
 				CE507710289464F40073300A /* Photo.swift */,
 				CE50772F289464F40073300A /* PhotoDetailed.swift */,
+				CE50770F289464F40073300A /* User.swift */,
+				CE50773A289464F40073300A /* Location.swift */,
+				CE507738289464F40073300A /* SearchResults.swift */,
 				CE507711289464F40073300A /* AlertData.swift */,
 			);
 			path = Model;
@@ -189,9 +201,9 @@
 			isa = PBXGroup;
 			children = (
 				CE507713289464F40073300A /* GalleryView.swift */,
-				CE507727289464F40073300A /* CardView.swift */,
 				CE507728289464F40073300A /* DetailView.swift */,
-				CE50772B289464F40073300A /* CircleImage.swift */,
+				CE507734289464F40073300A /* LikedView.swift */,
+				CE507737289464F40073300A /* DumbViews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,6 +214,7 @@
 				CE507715289464F40073300A /* Constants.swift */,
 				CE507716289464F40073300A /* Extensions */,
 				CE507719289464F40073300A /* Helper */,
+				CE50773F289464F40073300A /* ViewModifier */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -240,6 +253,24 @@
 				CE5076E7289464F40073300A /* TofDatAura.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		CE507737289464F40073300A /* DumbViews */ = {
+			isa = PBXGroup;
+			children = (
+				CE507727289464F40073300A /* CardView.swift */,
+				CE507733289464F40073300A /* MapView.swift */,
+				CE50772B289464F40073300A /* CircleImage.swift */,
+			);
+			path = DumbViews;
+			sourceTree = "<group>";
+		};
+		CE50773F289464F40073300A /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				CE50773D289464F40073300A /* Shake.swift */,
+			);
+			path = ViewModifier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,7 +403,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE507739289464F40073300A /* SearchResults.swift in Sources */,
 				CE50772E289464F40073300A /* DetailViewModel.swift in Sources */,
+				CE50773E289464F40073300A /* Shake.swift in Sources */,
 				CE507729289464F40073300A /* CardView.swift in Sources */,
 				CE50772C289464F40073300A /* CircleImage.swift in Sources */,
 				CE507732289464F40073300A /* URLtoUIImage.swift in Sources */,
@@ -384,11 +417,14 @@
 				CE50771D289464F40073300A /* User.swift in Sources */,
 				CE507722289464F40073300A /* Calendar+Extension.swift in Sources */,
 				CE507724289464F40073300A /* RemoteImage.swift in Sources */,
+				CE507736289464F40073300A /* LikedView.swift in Sources */,
+				CE50773B289464F40073300A /* Location.swift in Sources */,
 				CE50771F289464F40073300A /* AlertData.swift in Sources */,
 				CE507721289464F40073300A /* Constants.swift in Sources */,
 				CE5076E9289464F40073300A /* TofDatAura.xcdatamodeld in Sources */,
 				CE5076DD289464F40073300A /* TofDatAuraApp.swift in Sources */,
 				CE507720289464F40073300A /* GalleryView.swift in Sources */,
+				CE507735289464F40073300A /* MapView.swift in Sources */,
 				CE50772A289464F40073300A /* DetailView.swift in Sources */,
 				CE50770C289464F40073300A /* UnsplashService.swift in Sources */,
 			);
@@ -477,7 +513,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -531,7 +567,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -12,7 +12,7 @@ extension DateFormatter {
         self.init()
         self.dateFormat = dateFormat
     }
-    
+
     static let iso8601Full: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
@@ -21,7 +21,7 @@ extension DateFormatter {
         formatter.locale = Locale(identifier: "fr_FR")
         return formatter
     }()
-    
+
     static let frenchDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .full
@@ -29,7 +29,7 @@ extension DateFormatter {
         formatter.locale = Locale(identifier: "FR-fr")
         return formatter
     }()
-    
+
     static func parseTime(time: String?) -> Date? {
         if (time == nil) {
             return nil
@@ -41,7 +41,7 @@ extension DateFormatter {
         let rsc = RFC3339DateFormatter.date(from: time!)
         return rsc
     }
-    
+
     static func dateToTime(date: Date?) -> String {
         if (date == nil) {
             return String("")

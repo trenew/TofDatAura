@@ -9,8 +9,9 @@ import Combine
 import SwiftUI
 
 struct RemoteImage: View {
-    var url: URL
     @StateObject var viewModel = ImageProvider()
+    var url: URL
+
     var body: some View {
         Image(uiImage: viewModel.image)
             .resizable()
@@ -23,8 +24,8 @@ struct RemoteImage: View {
 
 class ImageProvider: ObservableObject {
     @Published var image = UIImage(named: "placeholder")!
-    private var cancellable: AnyCancellable?
     private let imageLoader = ImageLoader()
+    private var cancellable: AnyCancellable?
 
     func loadImage(url: URL) {
         self.cancellable = imageLoader.publisher(for: url)
@@ -37,7 +38,6 @@ class ImageProvider: ObservableObject {
 }
 
 class ImageLoader {
-
     private let urlSession: URLSession
     private let cache: NSCache<NSURL, UIImage>
 

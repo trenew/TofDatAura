@@ -16,25 +16,28 @@ struct PhotoDetailed: Codable, Identifiable, PhotoBase {
     let raw: String?
     let thumb: String?
     let created_at: Date?
+    let location: Location?
+    let coordinate: CLLocationCoordinate2D?
     let downloads: Int?
     let likes: Int
     let width: Int
     let height: Int
     let description: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case color
         case user
         case urls
         case created_at
+        case location
         case downloads
         case likes
         case width
         case height
         case description
     }
-    
+
     enum UrlsKeys: String, CodingKey {
         case raw
         case thumb
@@ -43,7 +46,7 @@ struct PhotoDetailed: Codable, Identifiable, PhotoBase {
         case height
         case description
     }
-    
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: PhotoDetailed.CodingKeys.self)
         id = try values.decode(String.self, forKey: .id)
@@ -55,6 +58,17 @@ struct PhotoDetailed: Codable, Identifiable, PhotoBase {
             downloads = try values.decode(Int.self, forKey: .downloads)
         } catch {
             downloads = nil
+        }
+        do {
+            location = try values.decode(Location.self, forKey: .location)
+            if location != nil {
+                coordinate = CLLocationCoordinate2D(latitude: location!.lat!, longitude: location!.lon!)
+            } else {
+                coordinate = nil
+            }
+        } catch {
+            location = nil
+            coordinate = nil
         }
         let urls = try values.nestedContainer(keyedBy: UrlsKeys.self, forKey: .urls)
         raw = try urls.decode(String.self, forKey: .raw)
@@ -69,7 +83,7 @@ struct PhotoDetailed: Codable, Identifiable, PhotoBase {
             description = nil
         }
     }
-    
+
     init(id: String,
          color: String?,
          user: User?,
@@ -77,6 +91,7 @@ struct PhotoDetailed: Codable, Identifiable, PhotoBase {
          raw: String?,
          thumb: String?,
          created_at: Date?,
+         location: Location?,
          downloads: Int?,
          likes: Int,
          width: Int,
@@ -93,9 +108,15 @@ struct PhotoDetailed: Codable, Identifiable, PhotoBase {
         self.width = width
         self.height = height
         self.description = description
+        if (location != nil && location?.lat != 0 && location?.lon != 0) {
+            self.coordinate = CLLocationCoordinate2D(latitude: location!.lat!, longitude: location!.lon!)
+        } else {
+            self.coordinate = nil
+        }
+        self.location = location
         self.downloads = downloads
     }
-    
+
     init() {
         id =  ""
         color = nil
@@ -103,15 +124,17 @@ struct PhotoDetailed: Codable, Identifiable, PhotoBase {
         name = nil
         created_at = nil
         downloads = nil
+        location = nil
         raw = nil
         thumb = nil
+        coordinate = nil
         likes = 0
         width = 0
         height = 0
         description = nil
     }
-    
+
     func encode(to encoder: Encoder) throws {
-        
+
     }
 }

@@ -9,12 +9,15 @@ import SwiftUI
 
 struct CircleImage: View {
     var url: String
-    
+
     var body: some View {
         RemoteImage(url: DetailViewModel.createRetinaPhotoUrl(url: self.url))
             .scaledToFit()
             .frame(width: 180, height: 180, alignment: .center)
             .clipShape(Circle())
+            .overlay {
+                Circle().stroke(.white, lineWidth: 3)
+            }
             .shadow(radius: 7)
     }
 }

@@ -13,8 +13,11 @@ struct Constants {
         static let scheme = "https"
         static let host = "api.unsplash.com"
         static let path = "/photos"
+        static let search = "/search"
+        static let random = "/random"
         static let itemsPerPage = 10
+        static let count = 10
     }
-    
+
     static let unknowPictureUrl = "https://media.ldlc.com/ld/products/00/04/79/36/LD0004793660_2.jpg"
 }
